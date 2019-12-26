@@ -17,9 +17,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/one',
-    name: 'one',
-    component: loadView('1-One')
+    path: '/spicyx',
+    name: 'spicyx',
+    component: loadView('1-SpicyX')
   },
   {
     path: '/two',
