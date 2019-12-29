@@ -60,8 +60,14 @@ h4 {
   @media (min-width: 1680px) {
     font-size: 1.6rem;
   }
+}
 
-  p {
-    font-family: "Prata", serif !important;
-  }
+p {
+  font-family: "Prata", serif;
+  letter-spacing: 1px;
+}
+
+li {
+  font-family: "Prata", serif;
+  letter-spacing: 1px;
 }

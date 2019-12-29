@@ -1,13 +1,13 @@
 <template>
   <header class="test">
-    <div id= "shazam" class="fade-in"  :style="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('+require(`../../assets/1-spicyx/1-slider/${currentSlide}.jpg`)+')'}">
-    <a id="left" @click="goToPrev"><i id="fa" class="fas fa-angle-left"></i></a>
-    <a id="right" @click="goToNext"><i id="fa" class="fas fa-angle-right"></i></a>
-    <h2>Welcome</h2>
-    <h1>TO THE SPICYX</h1>
-    <p id= "shazam" class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, impedit.</p>
-    <button>READ MORE</button>
-  </div>
+    <div id= "shazam" class="fade-in"  :style="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0,0, 0.6)), url('+require(`../../assets/1-spicyx/1-slider/${currentSlide}.jpg`)+')'}">
+      <a id="left" @click="goToPrev"><i id="fa" class="fas fa-angle-left"></i></a>
+      <a id="right" @click="goToNext"><i id="fa" class="fas fa-angle-right"></i></a>
+      <h2>Welcome</h2>
+      <h1>TO THE SPICYX</h1>
+      <p id= "shazam" class="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, impedit.</p>
+      <button>READ MORE</button>
+    </div>
   </header>
 </template>
 
