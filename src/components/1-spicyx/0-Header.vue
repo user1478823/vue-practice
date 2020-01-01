@@ -1,6 +1,6 @@
 <template>
   <header class="test">
-    <div id= "shazam" class="fade-in"  :style="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0,0, 0.6)), url('+require(`../../assets/1-spicyx/1-slider/${currentSlide}.jpg`)+')'}">
+    <div id= "shazam" class="fade-in" :style="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0,0, 0.6)), url('+require(`../../assets/1-spicyx/1-slider/${currentSlide}.jpg`)+')'}">
       <a id="left" @click="goToPrev"><i id="fa" class="fas fa-angle-left"></i></a>
       <a id="right" @click="goToNext"><i id="fa" class="fas fa-angle-right"></i></a>
       <h2>Welcome</h2>
@@ -13,6 +13,7 @@
 
 <script lang='ts'>
   import Vue from 'vue'
+
   export default Vue.extend({
     data() {
       return {
@@ -28,13 +29,11 @@
         this.resetAnimation();
         clearInterval(this.timer);
         this.timer = setInterval(() => { this.goToNext(); }, 2500); 
-       
       },
       goToNext() {
         this.currentSlide === 2  ? this.$set(this.$data, 'currentSlide', this.currentSlide = 0) 
                                  : this.$set(this.$data, 'currentSlide', this.currentSlide + 1);
-        this.resetAnimation();
-        
+        this.resetAnimation();  
       },
       resetAnimation() {
         let slide: HTMLElement;
@@ -42,8 +41,7 @@
         slide.classList.remove("fade-in");
         void slide.offsetWidth;
         slide.classList.add("fade-in");
-
-        },
+      },
     },
     mounted() {
       this.timer = setInterval(() => { this.goToNext(); }, 2500);
