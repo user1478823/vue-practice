@@ -15,7 +15,7 @@ h1 {
 
 h2 {
   font-family: 'Tangerine', cursive;
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 100;
   letter-spacing: 2px;
   color: $secondary-color;
@@ -27,39 +27,26 @@ h2 {
 }
 
 h3 {
+  font-family: "Assistant", serif;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: 2px;
 
-  @media screen and (min-width: 768px) {
-    font-size: 1.6rem;
-  }
-
-  @media (min-width: 1280px) {
-    font-size: 1.7rem;
-  }
-
-  @media (min-width: 1680px) {
-    font-size: 1.9rem;
-  }
+  @include tablet-portrait  { font-size: 1.8rem; }
+  @include tablet-landscape { font-size: 2rem;   }
+  @include desktop          { font-size: 2.2rem; } 
+  @include big-desktop      { font-size: 2.5rem; }
 }
 
 h4 {
+  font-family: "Assistant", serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
 
-  @media screen and (min-width: 768px) {
-    font-size: 1.3rem;
-  }
-
-  @media (min-width: 1280px) {
-    font-size: 1.4rem;
-  }
-
-  @media (min-width: 1680px) {
-    font-size: 1.6rem;
-  }
+  @include tablet-portrait  { font-size: 1.4rem; }
+  @include tablet-landscape { font-size: 1.5rem; }
+  @include desktop          { font-size: 1.6rem; } 
 }
 
 p {

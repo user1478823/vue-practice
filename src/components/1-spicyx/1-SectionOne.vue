@@ -5,7 +5,7 @@
       <h3>ABOUT US</h3>
       <i id="fork" class="fas fa-utensils"></i>
     </div>
-    <img id="slider-about-us" class="slide-in-br" :src="require(`../../assets/1-spicyx/2-about-us/${currentSlide}.png`)" alt="" />
+    <img id="slider-about-us" class="fade-in" :src="require(`../../assets/1-spicyx/2-about-us/${currentSlide}.png`)" alt="" />
     <p class="body">
       Amet consectetur adipisicing elit. Aliquam minus aliquid, itaque illum assumenda repellendus dolorem, dolore numquam totam saepe, porro delectus, libero enim odio quo. Explicabo ex sapiente sit eligendi, facere voluptatum! Quia vero rerum sunt porro architecto corrupti eaque corporis eum, enim soluta, perferendis dignissimos, repellendus, beatae laboriosam.
     </p>
@@ -42,9 +42,9 @@
       resetAnimation() {
         let slide: HTMLElement;
         slide = document.querySelector('#slider-about-us') as HTMLElement;
-        slide.classList.remove("slide-in-br");
+        slide.classList.remove("fade-in");
         void slide.offsetWidth;
-        slide.classList.add("slide-in-br");
+        slide.classList.add("fade-in");
       },
     },
     mounted() {
@@ -125,35 +125,28 @@
     height: auto;
   }
 
-  .slide-in-br {
-    -webkit-animation: slide-in-br 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-in-br 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+ .fade-in {
+    -webkit-animation: fade-in 1s linear both;
+            animation: fade-in 1s linear both;
   }
-  @-webkit-keyframes slide-in-br {
+  @-webkit-keyframes fade-in {
     0% {
-      -webkit-transform: translateY(1000px) translateX(1000px);
-              transform: translateY(1000px) translateX(1000px);
       opacity: 0;
     }
     100% {
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
       opacity: 1;
     }
   }
-  @keyframes slide-in-br {
+  @keyframes fade-in {
     0% {
-      -webkit-transform: translateY(1000px) translateX(1000px);
-              transform: translateY(1000px) translateX(1000px);
       opacity: 0;
     }
     100% {
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
       opacity: 1;
     }
   }
-  
+
+
   @include tablet-portrait {
     grid-template-rows: 60px 100px 200px 200px auto;
       grid-row-gap: 0;
