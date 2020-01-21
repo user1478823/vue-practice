@@ -19,9 +19,7 @@
   @import "colors", "fonts", "./../queries";
 
   section {
-    padding: 8em 0;
     color: white;
-
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(../../assets/1-spicyx/3-counter-bg.jpg);
     background-size: cover;
@@ -29,10 +27,6 @@
     background-position: center;
     background-attachment: fixed;
 
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: 40px 70px 100px 30px 70px 40px;
     grid-template-areas:

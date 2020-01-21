@@ -49,12 +49,23 @@ h4 {
   @include desktop          { font-size: 1.6rem; } 
 }
 
+h5 {
+  font-family: "Assistant", serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 2px;
+
+  @include tablet-portrait  { font-size: 1.1rem; }
+  @include tablet-landscape { font-size: 1.2rem; }
+  @include desktop          { font-size: 1.3rem; } 
+}
+
 p {
-  font-family: "Prata", serif;
+  font-family: "Assistant", serif;
   letter-spacing: 1px;
 }
 
 li {
-  font-family: "Prata", serif;
+  font-family: "Assistant", serif;
   letter-spacing: 1px;
 }

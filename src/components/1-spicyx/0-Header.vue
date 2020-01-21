@@ -12,41 +12,48 @@
 </template>
 
 <script lang='ts'>
-  import Vue from 'vue'
+  import { Vue, Component } from 'vue-property-decorator';
 
-  export default Vue.extend({
-    data() {
-      return {
-        currentSlide: 0,
-        timer: 0
-      }
-    },
+  @Component
+  export default class Header extends Vue {
+
+    currentSlide: number;
+    timer: number;
+
+    constructor() {
+      super();
+      this.currentSlide = 0;
+      this.timer = 0;
+      this.goToNext = this.goToNext.bind(this);
+      this.resetAnimation = this.resetAnimation.bind(this);
+    }
     
-    methods: {
-      goToPrev() {
-        this.currentSlide === 0  ? this.$set(this.$data, 'currentSlide', this.currentSlide = 2) 
-                                 : this.$set(this.$data, 'currentSlide', this.currentSlide - 1);
-        this.resetAnimation();
-        clearInterval(this.timer);
-        this.timer = setInterval(() => { this.goToNext(); }, 2500); 
-      },
-      goToNext() {
-        this.currentSlide === 2  ? this.$set(this.$data, 'currentSlide', this.currentSlide = 0) 
-                                 : this.$set(this.$data, 'currentSlide', this.currentSlide + 1);
-        this.resetAnimation();  
-      },
-      resetAnimation() {
-        let slide: HTMLElement;
-        slide = document.querySelector('#shazam') as HTMLElement;
-        slide.classList.remove("fade-in");
-        void slide.offsetWidth;
-        slide.classList.add("fade-in");
-      },
-    },
+    goToPrev() {
+      this.currentSlide === 0 ? this.$set(this.$data, 'currentSlide', this.currentSlide = 2) 
+                              : this.$set(this.$data, 'currentSlide', this.currentSlide - 1);
+      this.resetAnimation();
+      clearInterval(this.timer);
+      this.timer = setInterval(() => { this.goToNext(); }, 2500); 
+    }
+
+    goToNext() {
+      this.currentSlide === 2 ? this.$set(this.$data, 'currentSlide', this.currentSlide = 0) 
+                              : this.$set(this.$data, 'currentSlide', this.currentSlide + 1);
+      this.resetAnimation();  
+    }
+
+    resetAnimation() {
+      let slide: HTMLElement;
+      slide = document.querySelector('#shazam') as HTMLElement;
+      slide.classList.remove("fade-in");
+      void slide.offsetWidth;
+      slide.classList.add("fade-in");
+    }
+
     mounted() {
       this.timer = setInterval(() => { this.goToNext(); }, 2500);
     }
-  })
+  }
 </script>
 
 <style lang="scss" scoped>
